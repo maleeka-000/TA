@@ -1,0 +1,91 @@
+#new
+
+#BP
+
+##  Example of y scoring
+
+# ========================================================
+# TIMELINE — 23 lapisan energi
+# ========================================================
+
+d:Tf/TimelineStart           = 0.0 s
+d:Tf/TimelineEnd             = 23.0 s
+i:Tf/NumberOfSequentialTimes = 23
+
+s:Tf/LapisanEnergi/Function = "Step"
+dv:Tf/LapisanEnergi/Times  = 23 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 s
+dv:Tf/LapisanEnergi/Values = 23 147.0800 146.5300 145.9700 145.4200 144.8600 144.3100 143.7500 143.1900 142.6200 142.0600 141.4900 140.9200 140.3500 139.7800 139.2100 138.6400 138.0600 137.4800 136.9000 136.3200 135.7300 135.1500 134.5600 MeV
+
+s:Tf/BobotPartikel/Function = "Step"
+dv:Tf/BobotPartikel/Times  = 23 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 s
+iv:Tf/BobotPartikel/Values = 23 78908 83576 89777 97813 100000 88916 58082 30047 26672 41941 43603 28342 22022 29677 33660 25275 17198 22957 30768 22661 9016 18019 46896
+
+
+# ========================================================
+# 3. SUMBER TEMBAKAN (PENCIL BEAM SCANNING)
+# ========================================================
+s:So/PBS/Type                     = "Beam"
+s:So/PBS/Component                = "BeamPosition"
+s:So/PBS/BeamParticle             = "proton"
+
+# MENGHUBUNGKAN SOURCE DENGAN TIME FEATURES DI ATAS
+d:So/PBS/BeamEnergy               = Tf/LapisanEnergi/Value MeV
+i:So/PBS/NumberOfHistoriesInRun   = Tf/BobotPartikel/Value
+
+# Karakteristik geometri berkas pensil
+s:So/PBS/BeamPositionCutoffShape  = "Ellipse"
+s:So/PBS/BeamPositionDistribution = "Flat"
+d:So/PBS/BeamPositionCutoffX      = 2 mm
+d:So/PBS/BeamPositionCutoffY      = 2 mm
+d:So/PBS/BeamPositionSpreadX      = 3.0 mm
+d:So/PBS/BeamPositionSpreadY      = 3.0 mm
+s:So/PBS/BeamAngularDistribution  = "None"
+d:So/PBS/BeamAngularCutoffX       = 90. deg
+d:So/PBS/BeamAngularCutoffY       = 90. deg
+d:So/PBS/BeamAngularSpreadX       = 0.425 mrad
+d:So/PBS/BeamAngularSpreadY       = 0.425 mrad
+
+# Geometri Beam
+s:Ge/BeamPosition/Parent   = "World"
+s:Ge/BeamPosition/Type     = "Group"
+d:Ge/BeamPosition/TransX   = 0. mm
+d:Ge/BeamPosition/TransY   = 0. mm
+d:Ge/BeamPosition/TransZ   = -5 cm 
+d:Ge/BeamPosition/RotX     = 0. deg
+d:Ge/BeamPosition/RotY     = 0. deg
+d:Ge/BeamPosition/RotZ     = 0. deg
+
+# Apparatus (Dunia)
+d:Ge/World/HLX       = 220 cm
+d:Ge/World/HLY       = 220 cm
+d:Ge/World/HLZ       = 400 cm
+b:Ge/World/Invisible = "TRUE"
+s:Ge/World/Material  = "Air"
+
+# Phantom Water
+s:Ge/Phantom/Parent   = "World"
+s:Ge/Phantom/Type     = "TsBox"
+s:Ge/Phantom/Material = "G4_WATER"
+d:Ge/Phantom/HLX      = 150.0 mm
+d:Ge/Phantom/HLY      = 150.0 mm
+d:Ge/Phantom/HLZ      = 150.0 mm
+i:Ge/Phantom/ZBins    = 301
+d:Ge/Phantom/TransX   = 0. mm
+d:Ge/Phantom/TransY   = 0. mm
+d:Ge/Phantom/TransZ   = 150. mm
+d:Ge/Phantom/RotX     = 0. deg
+d:Ge/Phantom/RotY     = 0. deg
+d:Ge/Phantom/RotZ     = 0. deg
+
+# Modul Fisika
+sv:Ph/Default/Modules = 8 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP" "g4em-extra" "g4h-elastic_HP" "g4stopping" "g4ion-binarycascade" "g4decay" "g4radioactivedecay"
+s:Ts/G4DataDirectory = "/home/maleeka/G4Data"
+
+s:Sc/HASIL/Quantity    = "DoseToMedium"
+s:Sc/HASIL/Component   = "Phantom"
+b:Sc/HASIL/OutputToConsole = "TRUE"
+s:Sc/HASIL/IfOutputFileAlreadyExists = "Overwrite" 
+
+b:Ts/PauseBeforeQuit = "True"
+i:Ts/Seed = 1
+i:Ts/NumberOfThreads = 2
