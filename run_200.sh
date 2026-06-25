@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Daftar 16 energi untuk simulasi Pristine (tanpa bobot, konstan 100.000 partikel)
+# Daftar 24 energi untuk simulasi Pristine (tanpa bobot, konstan 100.000 partikel)
 energi_list=(
     200.00 199.49 199.06 198.62 198.19 197.75 197.31 196.87
     196.43 195.99 195.55 195.11 194.66 194.22 193.77 193.33
