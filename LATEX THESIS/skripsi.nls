@@ -1,0 +1,52 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{\emph {Lambang }}]\begingroup \emph {Kuantitas } \nomunit {\emph {Satuan }}\nomeqref {0.0}
+		\nompageref{xiii}
+  \item [{$G$}]\begingroup laju aliran massa  \nomunit{kg/s}\nomeqref {0.0}
+		\nompageref{xiv}
+  \item [{$h$}]\begingroup entalpi  \nomunit{J/kg}\nomeqref {0.0}
+		\nompageref{xiv}
+  \item [{\textbf{q}}]\begingroup fluks kalor  \nomunit{W/m$^2$}\nomeqref {0.0}
+		\nompageref{xiv}
+
+ \nomgroup{B}
+
+  \item [{\emph {Lambang }}]\begingroup \emph {Kuantitas } \nomunit {\emph {Satuan }}\nomeqref {0.0}
+		\nompageref{xiii}
+  \item [{$\epsilon$}]\begingroup emisivitas  \nomunit{--}\nomeqref {0.0}
+		\nompageref{xiv}
+  \item [{$\Sigma_f$}]\begingroup tampang lintang fisi makroskopik  \nomunit{1/cm}\nomeqref {0.0}
+		\nompageref{xiv}
+  \item [{$\Sigma_s$}]\begingroup tampang lintang fisi hamburan  \nomunit{1/cm}\nomeqref {0.0}
+		\nompageref{xiv}
+
+ \nomgroup{C}
+
+  \item [{\emph {Lambang }}]\begingroup \emph {Deskripsi }\nomeqref {0.0}
+		\nompageref{xiii}
+  \item [{ext}]\begingroup external\nomeqref {0.0}\nompageref{xiv}
+  \item [{in}]\begingroup inlet\nomeqref {0.0}\nompageref{xiv}
+  \item [{out}]\begingroup outlet\nomeqref {0.0}\nompageref{xiv}
+
+ \nomgroup{D}
+
+  \item [{\emph {Lambang }}]\begingroup \emph {Deskripsi }\nomeqref {0.0}
+		\nompageref{xiii}
+  \item [{F}]\begingroup fuel\nomeqref {0.0}\nompageref{xiv}
+  \item [{j}]\begingroup indeks koordinat\nomeqref {0.0}
+		\nompageref{xiv}
+
+ \nomgroup{E}
+
+  \item [{ECCS}]\begingroup Emergency Core Cooling System\nomeqref {0.0}
+		\nompageref{xiv}
+  \item [{HTGR}]\begingroup High Temperature Gas-cooled Reactor\nomeqref {0.0}
+		\nompageref{xiv}
+  \item [{JTF}]\begingroup Jurusan Teknik Fisika\nomeqref {0.0}
+		\nompageref{xiv}
+  \item [{RANS}]\begingroup Reynold-Average Navier-Stokes\nomeqref {0.0}
+		\nompageref{xiv}
+
+\end{thenomenclature}
